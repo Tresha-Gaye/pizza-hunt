@@ -33,7 +33,7 @@ const pizzaController = {
     // createPizza - adds a pizza to the database
     createPizza({ body}, res) {   // we destructure the `body` out of the Express.js `req` object since that's all we need
         Pizza.create(body)        // MongoBD methods are 'insertOne' or 'insertMany', but Mongoose 'create() can handle one or multiple inserts
-        .then(dbPizzaData +> res.json(dbPizzaData))
+        .then(dbPizzaData => res.json(dbPizzaData))
         .catch(err => res.status(400).json(err));
     },
 
