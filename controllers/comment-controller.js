@@ -42,8 +42,6 @@ const commentController = {
   },
 
   // remove reply
-
-  // remove reply
 removeReply({ params }, res) {
     Comment.findOneAndUpdate(
       { _id: params.commentId },
