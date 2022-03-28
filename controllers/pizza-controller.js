@@ -52,7 +52,7 @@ const pizzaController = {
 
   // updte pizza by id
   updatePizza({ params, body }, res) {
-    Pizza.findOneAndUpdate({ _id: params.id }, body, { new: true }) // this method allows mongoose to find a single document and update it. new:true causes it to return the updated document instead of the original
+    Pizza.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true }) // this method allows mongoose to find a single document and update it. new:true causes it to return the updated document instead of the original
       .then((dbPizzaData) => {
         // Mongoose & MongoDB also have .updateOne() & .updateMany() that updates documents without returning them
         if (!dbPizzaData) {
